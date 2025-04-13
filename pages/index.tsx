@@ -1,1 +1,1 @@
-// Homepage layout
+// Next.js page

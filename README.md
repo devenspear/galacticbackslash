@@ -1,2 +1,3 @@
-# galacticbackslash
-galacticbackslash.com (test 1)
+# GalacticBackslash
+
+Next.js + Tailwind starter project.

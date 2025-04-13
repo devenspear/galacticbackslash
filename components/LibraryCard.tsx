@@ -1,1 +1,0 @@
-// Library card component
