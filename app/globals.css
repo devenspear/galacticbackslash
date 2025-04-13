@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* n8n color palette */
+  --foreground-rgb: 255, 255, 255;
+  --background-rgb: 13, 13, 23;
+  --accent-primary: 255, 125, 59; /* orange */
+  --accent-secondary: 66, 133, 244; /* blue */
+  --card-bg: 28, 28, 44;
+  --grid-color: 40, 40, 60;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+}
+
+@layer base {
+  :root {
+    --background: 240 23% 7%;
+    --foreground: 0 0% 100%;
+    --card: 240 23% 14%;
+    --card-foreground: 0 0% 100%;
+    --popover: 240 23% 14%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 24 100% 62%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 217 80% 61%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 240 23% 20%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 24 100% 62%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 23% 20%;
+    --input: 240 23% 20%;
+    --ring: 24 100% 62%;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  .font-heading {
+    font-family: var(--font-gemunu);
+  }
+  .font-body {
+    font-family: var(--font-inter);
+  }
+}
+
+/* n8n-inspired styles */
+.dot-grid {
+  background-image: radial-gradient(rgba(var(--grid-color), 0.4) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.glow-effect {
+  position: relative;
+}
+
+.glow-effect::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  box-shadow: 0 0 30px 5px rgba(var(--accent-primary), 0.3);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.glow-effect:hover::after {
+  opacity: 1;
+}
+
+.lightning-glow {
+  filter: drop-shadow(0 0 15px rgba(var(--accent-primary), 0.5));
+}
+
+.card-gradient {
+  background: linear-gradient(145deg, rgba(var(--card-bg), 0.9), rgba(var(--card-bg), 0.6));
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.accent-text {
+  color: rgb(var(--accent-primary));
+}
+
+.accent-text-secondary {
+  color: rgb(var(--accent-secondary));
+}
+
+.primary-button {
+  background-color: rgb(var(--accent-primary));
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.primary-button:hover {
+  background-color: rgba(var(--accent-primary), 0.8);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -10px rgba(var(--accent-primary), 0.5);
+}
+
+.secondary-button {
+  background-color: transparent;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.secondary-button:hover {
+  border-color: rgb(var(--accent-primary));
+  color: rgb(var(--accent-primary));
+  transform: translateY(-2px);
+}
